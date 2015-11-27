@@ -1,3 +1,6 @@
-<div class = "container">
-	<h1>HIIIII DRACULA</h1>
-</div>
+<h1>Bilogy Blog</h1>
+<ul>
+	{{#each model as |post|}}
+		<li>{{post.title}}</li>
+	{{/each}}
+</ul>

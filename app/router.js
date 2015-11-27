@@ -12,7 +12,9 @@ Router.map(function() {
       this.resource('phone')
       this.resource('email')
   });
-  
+
+  this.resource('recent-comments');
+  this.resource('post', {path: 'posts/:post_id'});
 });
 
 export default Router;

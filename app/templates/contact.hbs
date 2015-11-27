@@ -1,1 +1,10 @@
-<h1>COntacts page</h1>
+<div class = "row">
+	<h1>Contacts</h1>
+	<div class = 'col-sm-6'>
+		<li>{{#link-to 'phone'}}Phone {{/link-to}}</li>
+		<li>{{#link-to 'email'}}Email {{/link-to}}</li>
+	</div>
+	<div class = 'col-sm-6'>
+		{{outlet}}
+	</div>
+</div>

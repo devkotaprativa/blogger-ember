@@ -1,4 +1,26 @@
-this is
-<h1>{{title}}</h1>
+{{#each model as |post|}}
+		{{#if isEditing}}
+
+			<form>
+				<div class = "from-group">
+					<h1>{{post.title}}</h1>
+					<label for="title">Title</label>
+					{{input class = "form-control" id = "title" value = post.title }}
+				</div>
+				<div class = "from-group">
+					<label for="Body">Body</label>
+					{{textarea class = "form-control" id = "body" value = post.body }}
+				</div>
+				<button class = "btn btn-primary" {{action "save"}} >Save</button>
+			</form>
+
+		{{else}}
+			<h1>{{post.title}}</h1>
+			<h3>{{post.body}}</h3>
+			<button class = "btn btn-primary" {{action 'edit'}} >Edit</button>
+		{{/if}}
+
+	
+{{/each}}
 <!-- <p>{{post.body}}</p> -->
 

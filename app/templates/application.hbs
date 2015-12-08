@@ -1,3 +1,4 @@
+<meta content="adfadfadsfi34/sdfadfadf=" name="csrf-token">
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -22,5 +23,11 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class = "container">
+
 	{{outlet}}
+  {{#if session.isAuthenticated}}
+  <button {{ action 'invalidateSession' }}>Logout</button>
+{{else}}
+  {{#link-to 'login'}}Login{{/link-to}}
+{{/if}}
 </div>

@@ -1,18 +1,21 @@
 import Ember from 'ember';
+import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
+export default Ember.Route.extend(AuthenticatedRouteMixin,{
 
-export default Ember.Route.extend({
 	model: function(){
-		 var posts = [
-		{
-		id:'1',
-		title:'lipsome vesicle',
-		body:"A liposome is a spherical vesicle"},		
-		{
-		id:'2',
-		title:'lipsome vesicle',
-		body:"A liposome is a sp"}
-]
-	//console.log(posts)
-		return posts
+    //this.get('session').set('data.locale')
+		return this.store.findAll('post')
+// 		 var posts = [
+// 		{
+// 		id:'1',
+// 		title:'lipsome vesicle',
+// 		body:"A liposome is a spherical vesicle"},		
+// 		{
+// 		id:'2',
+// 		title:'lipsome vesicle',
+// 		body:"A liposome is a sp"}
+// ]
+// 	//console.log(posts)
+// 		return posts
 	}
 });

@@ -18,6 +18,16 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+   ENV['simple-auth'] = {    
+    authorizer: 'simple-auth-authorizer:devise'   
+    
+  };
+  ENV['simple-auth-devise'] = {
+    identificationAttributeName: 'email',
+    resourceName: 'user',
+    tokenAttributeName: 'authentication_token',
+    crossOriginWhitelist: ['*'] 
+  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

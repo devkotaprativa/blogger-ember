@@ -1,12 +1,13 @@
 import Ember from 'ember';
-
-export default Ember.Route.extend({
+import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixin';
+export default Ember.Route.extend(AuthenticatedRouteMixin,{
 
 	model: function(params) {
 		// console.log("hell")
-		 console.log(this.modelFor('posts').findBy('id', params.post_id).title)
+		// console.log(this.modelFor('posts').findBy('id', params.post_id).title)
 		 //TODO
-		 var post = [this.modelFor('posts').findBy('id', params.post_id)];
-		return post;
+     return [this.store.find('post', params.post_id)]
+		//return [this.modelFor('posts').findBy('id', params.post_id)];
+		
 	}
 });

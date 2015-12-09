@@ -14,6 +14,11 @@ export default Ember.Controller.extend(LoginControllerMixin,{
       });
 
       user.save();
+       this.notifications.addNotification({
+      message: 'signed up successfully!, proceed to login',
+      type: 'success',
+      autoClear: 'true'
+    });
       this.transitionTo('login')
      }
    }

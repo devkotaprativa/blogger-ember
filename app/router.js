@@ -16,6 +16,7 @@ Router.map(function() {
   this.resource('recent-comments');
   this.resource('post', {path: 'posts/:post_id'});
   this.route('login');
+  this.route('signup');
 });
 
 export default Router;

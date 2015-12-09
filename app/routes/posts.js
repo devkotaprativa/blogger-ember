@@ -4,7 +4,12 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
 
 	model: function(){
     //this.get('session').set('data.locale')
-		return this.store.findAll('post')
+    this.notifications.addNotification({
+      message: 'Logged in  successfully!',
+      type: 'success',
+      autoClear: 'true'
+    });
+		return this.store.findAll('post');
 // 		 var posts = [
 // 		{
 // 		id:'1',
@@ -17,5 +22,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
 // ]
 // 	//console.log(posts)
 // 		return posts
+    
 	}
 });

@@ -23,7 +23,9 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class = "container">
-
+  {{#each notifications as |notification|}}
+    {{notification-message notification=notification}}
+  {{/each}}
 	{{outlet}}
   {{#if session.isAuthenticated}}
   <button {{ action 'invalidateSession' }}>Logout</button>

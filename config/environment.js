@@ -22,6 +22,13 @@ module.exports = function(environment) {
     authorizer: 'simple-auth-authorizer:devise'   
     
   };
+
+  ENV['ember-simple-auth'] = {    
+    routeAfterAuthenticaton: 'posts',
+    routeIfAlreadyAuthenticated: 'posts'
+    
+  };
+
   ENV['simple-auth-devise'] = {
     identificationAttributeName: 'email',
     resourceName: 'user',
